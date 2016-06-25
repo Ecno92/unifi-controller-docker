@@ -1,0 +1,14 @@
+unifi:
+  build: .
+  # https://community.ubnt.com/t5/UniFi-Wireless/Which-ports-need-to-be-accessible-by-the-AP-s/td-p/546580
+  ports:
+    - "8080:8080"
+    - "8081:8081"
+    - "8443:8443"
+    - "8843:8843"
+    - "8880:8880"
+    - "3478:3478"
+  # data and log directories are symlinks in the container.
+  volumes:
+    - ./volumes/data:/usr/lib/unifi/data
+    - ./volumes/logs:/usr/lib/unifi/logs
